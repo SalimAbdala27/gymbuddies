@@ -15,7 +15,7 @@ function App() {
         <div className="App">
           {/* Main content area */}
           <Routes>
-            <Route path="/" element={<h2>Welcome to Gym Buddies</h2>} />
+            <Route path="/" element={<h2>Welcome to Gym Buddies 2.0</h2>} />
             <Route path="/login" element={<Login />} />
             {/* Add more routes here */}
           </Routes>
