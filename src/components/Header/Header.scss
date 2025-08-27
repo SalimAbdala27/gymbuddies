@@ -1,0 +1,25 @@
+// src/components/Header/Header.scss
+.header {
+  background-color: #222831;
+  border: 2px solid #00ADB5;
+  color: #fff;
+  padding: 0px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.nav-link {
+  color: #eeeeee;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 1rem;
+  &:hover {
+    text-decoration: underline;
+  }
+}

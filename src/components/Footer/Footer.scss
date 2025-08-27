@@ -1,0 +1,26 @@
+// src/components/Footer/Footer.scss
+.footer {
+  background-color: #222831;
+  border: 2px solid #00ADB5;
+  color: #EEEEEE;
+  padding: 0px 8px;
+  text-align: center;
+  height: 70px;
+  nav {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.nav-link {
+  color: #EEEEEE;
+  text-decoration: none;
+  font-weight: bold;
+  transition: text-decoration 0.3s;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
