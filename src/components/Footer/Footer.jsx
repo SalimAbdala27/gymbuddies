@@ -5,7 +5,6 @@ import './Footer.scss'; // Import the SCSS file
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>© 2025 Gym Buddies</p>
       <nav>
         <Link to="/about" className="nav-link">About</Link>
         <Link to="/contact" className="nav-link">Contact</Link>

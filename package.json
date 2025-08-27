@@ -1,8 +1,8 @@
 {
   "name": "gymbuddies",
   "version": "0.1.0",
-  "homepage": "https://SalimAbdala27.github.io/gymbuddies",
   "private": true,
+  "homepage": "https://SalimAbdala27.github.io/gymbuddies",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
@@ -15,15 +15,18 @@
     "sass": "^1.91.0",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
   "scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
-,
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "postbuild": "cp build/index.html build/404.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -41,9 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "vite-plugin-pwa": "^1.0.3"
   }
 }
