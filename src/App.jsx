@@ -1,28 +1,41 @@
 // src/App.jsx
-import logo from './logo.svg';
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './auth';
 import Login from './pages/Login/Login';
+import Friends from './pages/Friends/Friends';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
+function AppWrapper() {
+  const { user } = useAuth();
+
+  return (
+    <div className="app-wrapper">
+      <Header />
+      <div className="App">
+        <Routes>
+          <Route
+            path="/"
+            element={ <h2>Welcome to Gym Buddies 2.0</h2>}
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/friends" element={<Friends/>} />
+          {/* Add more routes here later */}
+        </Routes>
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
 function App() {
   return (
-    <Router>
-      {/* Wrap Header, App, and Footer in a flex container */}
-      <div className="app-wrapper">
-        <Header />
-        <div className="App">
-          {/* Main content area */}
-          <Routes>
-            <Route path="/" element={<h2>Welcome to Gym Buddies 2.0</h2>} />
-            <Route path="/login" element={<Login />} />
-            {/* Add more routes here */}
-          </Routes>
-        </div>
-        <Footer />
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <AppWrapper />
+      </Router>
+    </AuthProvider>
   );
 }
 
